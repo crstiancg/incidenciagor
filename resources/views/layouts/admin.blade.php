@@ -38,35 +38,35 @@
                 'title' => 'Equipos',
                 'url' => route('admin.equipos.index'),
                 'active' => request()->routeIs('admin.equipos.*'),
-                'icon' => 'fa-solid fa-globe'
+                'icon' => 'fa-solid fa-desktop'
             ],
 
             [
                 'title' => 'Tipos',
                 'url' => route('admin.tipos.index'),
                 'active' => request()->routeIs('admin.tipos.*'),
-                'icon' => 'fa-solid fa-globe'
+                'icon' => 'fa-solid fa-bars'
             ],
 
             [
                 'title' => 'Oficinas',
                 'url' => route('admin.oficinas.index'),
                 'active' => request()->routeIs('admin.oficinas.*'),
-                'icon' => 'fa-solid fa-globe'
+                'icon' => 'fa-solid fa-house-laptop'
             ],
 
             [
                 'title' => 'Incidencias',
                 'url' => route('admin.incidencias.index'),
                 'active' => request()->routeIs('admin.incidencias.*'),
-                'icon' => 'fa-solid fa-globe'
+                'icon' => 'fa-solid fa-bolt'
             ],
 
             [
                 'title' => 'Historial',
                 'url' => route('admin.historial.index'),
                 'active' => request()->routeIs('admin.historial.*'),
-                'icon' => 'fa-solid fa-globe'
+                'icon' => 'fa-brands fa-slack',
             ],
         ];
     @endphp

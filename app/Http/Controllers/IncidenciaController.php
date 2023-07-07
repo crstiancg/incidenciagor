@@ -12,7 +12,9 @@ class IncidenciaController extends Controller
      */
     public function index()
     {
-        //
+        $incidencias = Incidencia::all();
+
+        return view('admin.incidencias.index', compact('incidencias'));
     }
 
     /**

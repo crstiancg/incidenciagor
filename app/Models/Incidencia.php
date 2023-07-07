@@ -29,7 +29,12 @@ class Incidencia extends Model
         return $this->hasMany(Historial::class);
     }
 
-    public function etiquetas()
+    // public function etiquetas()
+    // {
+    //     return $this->belongsToMany(Etiqueta::class);
+    // }
+
+    public function etiqueta()
     {
         return $this->belongsToMany(Etiqueta::class);
     }

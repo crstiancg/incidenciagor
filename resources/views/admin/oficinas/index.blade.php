@@ -4,7 +4,7 @@
         >Registrar</a>
 
     </div>
-<div class="relative overflow-x-auto">
+<div class="relative overflow-x-auto bg-white rounded shadow-lg">
     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-600">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-000 dark:text-gray-700">
             <tr>

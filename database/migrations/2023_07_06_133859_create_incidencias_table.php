@@ -13,11 +13,17 @@ return new class extends Migration
     {
         Schema::create('incidencias', function (Blueprint $table) {
             $table->id();
+            $table->longText('descripcion')->nullable();
+            $table->string('usuario');
             $table->enum('nivel',[0,1])->default(0);
+            $table->date('fecha_apertura');
             $table->enum('estado',['Pendiente', 'Solucionado', 'Cancelado', 'Inactivo'])->default('Pendiente');
             $table->foreignId('equipo_id')->constrained('equipos')->onDelete('cascade');
+            $table->date('fecha_cierre');
             $table->foreignId('oficina_id')->constrained('oficinas')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('etiqueta_id')->constrained('etiquetas')->onDelete('cascade');
+            $table->longText('respuesta');
             $table->timestamps();
         });
     }

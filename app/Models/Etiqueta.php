@@ -9,8 +9,13 @@ class Etiqueta extends Model
 {
     use HasFactory;
 
+    // public function incidencias()
+    // {
+    //     return $this->belongsToMany(Incidencia::class);
+    // }
+
     public function incidencias()
     {
-        return $this->belongsToMany(Incidencia::class);
+        return $this->hasMany(Incidencia::class);
     }
 }

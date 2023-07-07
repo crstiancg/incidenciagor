@@ -68,6 +68,13 @@
                 'active' => request()->routeIs('admin.historial.*'),
                 'icon' => 'fa-brands fa-slack',
             ],
+
+            [
+                'title' => 'Lista de Fallos',
+                'url' => route('admin.etiquetas.index'),
+                'active' => request()->routeIs('admin.etiquetas.*'),
+                'icon' => 'fa-brands fa-slack',
+            ],
         ];
     @endphp
     <div class="flex" x-data="{ 

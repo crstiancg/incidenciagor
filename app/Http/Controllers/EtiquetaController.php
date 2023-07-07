@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Etiqueta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EtiquetaController extends Controller
 {
@@ -12,7 +13,9 @@ class EtiquetaController extends Controller
      */
     public function index()
     {
-        //
+        $etiquetas = Etiqueta::all();
+
+        return view('admin.etiquetas.index', compact('etiquetas'));
     }
 
     /**
@@ -20,7 +23,7 @@ class EtiquetaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.etiquetas.create');
     }
 
     /**
@@ -28,7 +31,13 @@ class EtiquetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $etiqueta = new Etiqueta();
+
+        $etiqueta->nombre = $request->nombre;
+
+        $etiqueta->save();
+
+        return Redirect::route('admin.etiquetas.index');
     }
 
     /**
@@ -44,7 +53,8 @@ class EtiquetaController extends Controller
      */
     public function edit(Etiqueta $etiqueta)
     {
-        //
+        return view('admin.etiquetas.edit', compact('etiqueta'));
+        
     }
 
     /**
@@ -52,7 +62,11 @@ class EtiquetaController extends Controller
      */
     public function update(Request $request, Etiqueta $etiqueta)
     {
-        //
+        $etiqueta->nombre = $request->nombre;
+
+        $etiqueta->save();
+
+        return Redirect::route('admin.etiquetas.index');
     }
 
     /**
@@ -60,6 +74,9 @@ class EtiquetaController extends Controller
      */
     public function destroy(Etiqueta $etiqueta)
     {
-        //
+        $etiqueta->delete();
+        
+        return Redirect::route('admin.etiquetas.index');
+
     }
 }

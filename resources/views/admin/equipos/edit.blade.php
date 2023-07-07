@@ -81,7 +81,7 @@
         
         <div class="mb-4">
             <x-label>
-                Oficina
+                Tipo
             </x-label>
             <select name="tipo_id"
                 class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">

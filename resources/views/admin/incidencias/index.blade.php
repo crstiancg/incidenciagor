@@ -35,12 +35,12 @@
                     @if ($incidencia->nivel == 1)
                         <span
                         class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-600 text-white rounded">
-                            Prioridad
+                            Muy urgente
                         </span>
                     @elseif ($incidencia->nivel == 0)
                     <span
                         class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-blue-600 text-white rounded">
-                            No Prioridad
+                            Urgente
                         </span>
                     @endif
                 </td>

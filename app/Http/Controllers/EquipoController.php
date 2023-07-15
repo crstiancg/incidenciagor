@@ -13,6 +13,12 @@ class EquipoController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->middleware('can:admin.dashboard')->only('admin.dashboard');
+    }
+
     public function index()
     {
         $equipos = Equipo::all();

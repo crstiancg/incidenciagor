@@ -29,8 +29,15 @@
         $links = [
             [
                 'title' => 'Dashboard',
-                'url' => route('admin.dashboard'),
-                'active' => request()->routeIs('admin.dashboard'),
+                'url' => route('admin.dashboard.index'),
+                'active' => request()->routeIs('admin.dashboard*'),
+                'icon' => 'fa-solid fa-gauge'
+            ],
+
+            [
+                'title' => 'Roles',
+                'url' => route('admin.roles.index'),
+                'active' => request()->routeIs('admin.roles*'),
                 'icon' => 'fa-solid fa-gauge'
             ],
 

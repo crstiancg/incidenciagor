@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,10 +17,22 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        User::factory()->create([
+        $this->call(RolSeeder::class);
+
+        $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
         ]);
+        $user->assignRole([1]);
+
+        $pra = User::factory()->create([
+            'name' => 'Práticante',
+            'email' => 'practicante@gmail.com',
+            'password' => bcrypt('practicante'),
+        ]);
+        $pra->assignRole([2]);
+
+
     }
 }

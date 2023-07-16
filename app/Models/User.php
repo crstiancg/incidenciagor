@@ -61,8 +61,14 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function indicencias()
+    public function eventos()
+    {
+        return $this->hasMany(Evento::class);
+    }
+    public function incidencias()
     {
         return $this->hasMany(Incidencia::class);
     }
+
+
 }
